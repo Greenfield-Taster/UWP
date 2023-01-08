@@ -27,22 +27,22 @@ namespace App1
 
             /*********************************************************/
 
-            var G = new Grid()
-            {
-                Background = new SolidColorBrush(Windows.UI.Colors.Blue),
-            };
-            var TB = new TextBlock()
-            {
-                FontSize = 50,
-            };
-            var R = Windows.UI.Xaml.Documents.Run()
-                {
-                    Text = "Hello, World!"
-                };
+            //var G = new Grid()
+            //{
+            //    Background = new SolidColorBrush(Windows.UI.Colors.Blue),
+            //};
+            //var TB = new TextBlock()
+            //{
+            //    FontSize = 50,
+            //};
+            //var R = Windows.UI.Xaml.Documents.Run()
+            //    {
+            //        Text = "Hello, World!"
+            //    };
            
-            TB.Inlines.Add(R);
-            G.Children.Add(TB);
-            this.Content = G;
+            //TB.Inlines.Add(R);
+            //G.Children.Add(TB);
+            //this.Content = G;
         }
     }
 }

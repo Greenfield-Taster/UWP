@@ -10,7 +10,7 @@
     <Page.Content>
 
     <Grid Background="Blue">
-            <TextBlock FontSize="50">Hello,World!</TextBlock>
+            <TextBlock FontSize="60" SelectionHighlightColor="#FF1AA01C">Hello,World!</TextBlock>
     </Grid>
     </Page.Content>
 </Page>
