@@ -7,8 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Content>
 
-    <Grid>
-
+    <Grid Background="Blue">
+            <TextBlock FontSize="50">Hello,World!</TextBlock>
     </Grid>
+    </Page.Content>
 </Page>
