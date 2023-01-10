@@ -28,6 +28,7 @@ namespace App1
         /// </summary>
         public App()
         {
+            //Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride = "en-GB";
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }

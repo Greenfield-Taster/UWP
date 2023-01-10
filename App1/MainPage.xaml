@@ -7,10 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Page.Content>
 
-    <Grid Background="Blue">
-            <TextBlock FontSize="60" SelectionHighlightColor="#FF1AA01C">Hello,World!</TextBlock>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Image Source="ms-appx:///ClassLibrary1/Images/Truck.jpg" Stretch="Uniform"/>
     </Grid>
-    </Page.Content>
 </Page>
