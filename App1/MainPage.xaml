@@ -9,6 +9,17 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Image Source="ms-appx:///ClassLibrary1/Images/Truck.jpg" Stretch="Uniform"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="red" Grid.Row="0" Grid.Column="0"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="Blue" Grid.Column="1"/>
+        <Rectangle Fill="Green" Grid.Row="1"/>
+        <Rectangle Fill="Yellow" Grid.Row="1" Grid.Column="1"/>
     </Grid>
 </Page>
