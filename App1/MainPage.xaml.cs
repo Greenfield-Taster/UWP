@@ -72,7 +72,7 @@ namespace App1
 
         private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            MyText.SelectedText = "Hello, World!";
+            //MyText.SelectedText = "Hello, World!";
         }
     }
 }

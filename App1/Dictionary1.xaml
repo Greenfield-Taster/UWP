@@ -1,0 +1,8 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Thickness x:Key="MyThickness">10</Thickness>
+    <SolidColorBrush x:Key="MyBrush" Color="Yellow"/>
+    <Thickness x:Key="MyPadding">20</Thickness>
+    <x:Double x:Key="MyFontSize">50</x:Double>
+</ResourceDictionary>

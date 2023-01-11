@@ -7,7 +7,24 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.Resources>
+        <Thickness x:Key="MyThickness">10</Thickness>
+        <!--<SolidColorBrush x:Key="MyBrush" Color="Blue"/>-->
+        <Thickness x:Key="MyPadding">20</Thickness>
+        <x:Double x:Key="MyFontSide">50</x:Double>
+        <Style x:Key="MyStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="{StaticResource MyFontSize}"/>
+            <Setter Property="Padding" Value="{StaticResource MyPadding}"/>
+            <Setter Property="BorderBrush" Value="Purple"/>
+            <Setter Property="BorderThickness" Value="{StaticResource MyThickness}"/>
+        </Style>
+        <Style x:Key="MyStyle2" TargetType="Button" BasedOn="{StaticResource MyStyle}">
+            <Setter Property="BorderBrush" Value="Orange"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+    </Page.Resources>
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -29,7 +46,19 @@
         <!--<Rectangle Fill="Blue" Height="100" IsHitTestVisible="False" Opacity="0.5" PointerPressed="Rectangle_PointerPressed"/>-->
 
         <!--***************************************************************************************************-->
-        <Button Content="Click me!" FontSize="50" Click="Button_Click"/>
-        <TextBox Text="" x:Name="MyText" FontSize="50"/>
+        
+        <!--<Button Content="Click me!" FontSize="50" Click="Button_Click"/>
+        <TextBox Text="" x:Name="MyText" FontSize="50"/>-->
+
+        <!--***************************************************************************************************-->
+        <!--Когда наводимся на кнопку - цвет меняется мы кнопка выделяется-->
+        <StackPanel.Resources>
+            <Thickness x:Key="MyThickness">10</Thickness>
+            <!--<SolidColorBrush x:Key="MyBrush" Color="red"/>-->
+            <Thickness x:Key="MyPadding">20</Thickness>
+            <x:Double x:Key="MyFontSide">50</x:Double>
+        </StackPanel.Resources>
+        <Button Content="Hello, World!" Style="{StaticResource MyStyle}"/>
+        <Button Content="Hello, World!"/>
     </StackPanel>
 </Page>
