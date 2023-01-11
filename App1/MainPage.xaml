@@ -8,18 +8,28 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Rectangle Fill="red" Grid.Row="0" Grid.Column="0"/>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <TextBlock Text="0.0" FontSize="90"/>
         <Rectangle Fill="Blue" Grid.Column="1"/>
         <Rectangle Fill="Green" Grid.Row="1"/>
-        <Rectangle Fill="Yellow" Grid.Row="1" Grid.Column="1"/>
-    </Grid>
+        <Rectangle Fill="Yellow" Grid.Row="1" Grid.Column="1"/>-->
+        
+<!--***************************************************************************************************-->
+
+        <!--<Rectangle Fill="Green" Height="100" Opacity="0.5" PointerPressed="Rectangle_PointerPressed_1" ManipulationMode="Rotate, Scale" ManipulationStarted="Rectangle_ManipulationStarted"/>
+        <TextBlock Text="Hello, World!" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="TextBlock_PointerPressed"/>-->
+        <!--<Rectangle Fill="Blue" Height="100" IsHitTestVisible="False" Opacity="0.5" PointerPressed="Rectangle_PointerPressed"/>-->
+
+        <!--***************************************************************************************************-->
+        <Button Content="Click me!" FontSize="50" Click="Button_Click"/>
+        <TextBox Text="" x:Name="MyText" FontSize="50"/>
+    </StackPanel>
 </Page>
