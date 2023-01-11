@@ -7,9 +7,46 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Page.Resources>
-        <Thickness x:Key="MyThickness">10</Thickness>
-        <!--<SolidColorBrush x:Key="MyBrush" Color="Blue"/>-->
+
+    <!--Form animation***********************************************************************************-->
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.Triggers>
+            <EventTrigger>
+                <BeginStoryboard>
+                    <Storyboard x:Name="ColorPulse">
+                        <!--<ColorAnimation Storyboard.TargetName="RFill" Storyboard.TargetProperty="(SolidColorBrush.Color)"
+                                        To="Blue" Duration="0:0:3" RepeatBehavior="Forever" AutoReverse="True"/>-->
+                        <!--<DoubleAnimation Storyboard.TargetName="R" Storyboard.TargetProperty="(Rectangle.RenderTransform).(ScaleTransform.ScaleX)" To=" 0.5"
+                                     AutoReverse="True" Duration="0:0:2" BeginTime="0:0:3" RepeatBehavior="Forever"/>-->
+                        <ColorAnimationUsingKeyFrames Storyboard.TargetName="RFill" Storyboard.TargetProperty="(SolidColorBrush.Color)" Duration="0:0:4" RepeatBehavior="Forever">
+                                                 <DiscreteColorKeyFrame KeyTime="0:0:0" Value="Red"/>
+                                                 <LinearColorKeyFrame KeyTime="0:0:2" Value="White"/>
+                            <EasingColorKeyFrame KeyTime="0:0:4" Value="blue">
+                                <EasingColorKeyFrame.EasingFunction>
+                                    <PowerEase EasingMode="EaseOut"/>
+                                </EasingColorKeyFrame.EasingFunction>                                
+                            </EasingColorKeyFrame>
+                        </ColorAnimationUsingKeyFrames>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
+        <Rectangle x:Name="R">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="red" x:Name="RFill"/>
+            </Rectangle.Fill>
+            <Rectangle.RenderTransform>
+                <ScaleTransform ScaleX="1" ScaleY="1"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+    </Grid>
+    
+    <!--Разбор формы на секции***********************************************************************************-->
+
+    <!--<Page.Resources>-->
+        <!--<Thickness x:Key="MyThickness">10</Thickness>
+        <SolidColorBrush x:Key="MyBrush" Color="Blue"/>
         <Thickness x:Key="MyPadding">20</Thickness>
         <x:Double x:Key="MyFontSide">50</x:Double>
         <Style x:Key="MyStyle" TargetType="Button">
@@ -24,8 +61,8 @@
         <Style TargetType="Button">
             <Setter Property="Foreground" Value="Red"/>
         </Style>
-    </Page.Resources>
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    </Page.Resources>-->
+    <!--<StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">-->
         <!--<Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>
@@ -52,13 +89,13 @@
 
         <!--***************************************************************************************************-->
         <!--Когда наводимся на кнопку - цвет меняется мы кнопка выделяется-->
-        <StackPanel.Resources>
+        <!--<StackPanel.Resources>
             <Thickness x:Key="MyThickness">10</Thickness>
-            <!--<SolidColorBrush x:Key="MyBrush" Color="red"/>-->
+            --><!--<SolidColorBrush x:Key="MyBrush" Color="red"/>--><!--
             <Thickness x:Key="MyPadding">20</Thickness>
             <x:Double x:Key="MyFontSide">50</x:Double>
         </StackPanel.Resources>
         <Button Content="Hello, World!" Style="{StaticResource MyStyle}"/>
-        <Button Content="Hello, World!"/>
-    </StackPanel>
+        <Button Content="Hello, World!"/>-->
+    <!--</StackPanel>-->
 </Page>
