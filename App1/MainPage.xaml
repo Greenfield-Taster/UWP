@@ -7,25 +7,40 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <!--Form animation***********************************************************************************-->
+    <CommandBar ClosedDisplayMode="Minimal">
+        <AppBarButton Icon="Shuffle" Label="Shuffle"/>
+        <AppBarToggleButton Icon="RepeatAll" Label="Reapet"/>
+        <AppBarSeparator/>
+        <AppBarButton Icon="Back" Label="Back"/>
+        <AppBarButton Icon="Stop" Label="Stop"/>
+        <AppBarButton Icon="Play" Label="Play"/>
+        <AppBarButton Icon="Forward" Label="Forward"/>
+        <CommandBar.Content>
+            <TextBlock Text="Now playing..." Margin="12,14"/>
+        </CommandBar.Content>
+        <CommandBar.SecondaryCommands>
+            <AppBarButton Icon="Like" Label="Like"/>
+            <AppBarButton Icon="Dislike" Label="Dislike"/>
+        </CommandBar.SecondaryCommands>
+    </CommandBar>
+    <!--Form animation***********************************************************************************--><!--
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.Triggers>
             <EventTrigger>
                 <BeginStoryboard>
                     <Storyboard x:Name="ColorPulse">
-                        <!--<ColorAnimation Storyboard.TargetName="RFill" Storyboard.TargetProperty="(SolidColorBrush.Color)"
+                        --><!--<ColorAnimation Storyboard.TargetName="RFill" Storyboard.TargetProperty="(SolidColorBrush.Color)"
                                         To="Blue" Duration="0:0:3" RepeatBehavior="Forever" AutoReverse="True"/>-->
                         <!--<DoubleAnimation Storyboard.TargetName="R" Storyboard.TargetProperty="(Rectangle.RenderTransform).(ScaleTransform.ScaleX)" To=" 0.5"
-                                     AutoReverse="True" Duration="0:0:2" BeginTime="0:0:3" RepeatBehavior="Forever"/>-->
+                                     AutoReverse="True" Duration="0:0:2" BeginTime="0:0:3" RepeatBehavior="Forever"/>--><!--
                         <ColorAnimationUsingKeyFrames Storyboard.TargetName="RFill" Storyboard.TargetProperty="(SolidColorBrush.Color)" Duration="0:0:4" RepeatBehavior="Forever">
                                                  <DiscreteColorKeyFrame KeyTime="0:0:0" Value="Red"/>
                                                  <LinearColorKeyFrame KeyTime="0:0:2" Value="White"/>
                             <EasingColorKeyFrame KeyTime="0:0:4" Value="blue">
                                 <EasingColorKeyFrame.EasingFunction>
-                                    <PowerEase EasingMode="EaseOut"/>
-                                </EasingColorKeyFrame.EasingFunction>                                
+                                    <PowerEase EasingMode="EaseIn"/>
+                                </EasingColorKeyFrame.EasingFunction>                            
                             </EasingColorKeyFrame>
                         </ColorAnimationUsingKeyFrames>
                     </Storyboard>
@@ -40,7 +55,7 @@
                 <ScaleTransform ScaleX="1" ScaleY="1"/>
             </Rectangle.RenderTransform>
         </Rectangle>
-    </Grid>
+    </Grid>-->
     
     <!--Разбор формы на секции***********************************************************************************-->
 
@@ -76,19 +91,19 @@
         <Rectangle Fill="Green" Grid.Row="1"/>
         <Rectangle Fill="Yellow" Grid.Row="1" Grid.Column="1"/>-->
         
-<!--***************************************************************************************************-->
+    <!--first work with rectangle***************************************************************************************************-->
 
         <!--<Rectangle Fill="Green" Height="100" Opacity="0.5" PointerPressed="Rectangle_PointerPressed_1" ManipulationMode="Rotate, Scale" ManipulationStarted="Rectangle_ManipulationStarted"/>
         <TextBlock Text="Hello, World!" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" PointerPressed="TextBlock_PointerPressed"/>-->
         <!--<Rectangle Fill="Blue" Height="100" IsHitTestVisible="False" Opacity="0.5" PointerPressed="Rectangle_PointerPressed"/>-->
 
-        <!--***************************************************************************************************-->
+        <!--Button click***************************************************************************************************-->
         
         <!--<Button Content="Click me!" FontSize="50" Click="Button_Click"/>
         <TextBox Text="" x:Name="MyText" FontSize="50"/>-->
 
-        <!--***************************************************************************************************-->
-        <!--Когда наводимся на кнопку - цвет меняется мы кнопка выделяется-->
+    <!---Когда наводимся на кнопку - цвет меняется мы кнопка выделяется****************************************************-->
+    
         <!--<StackPanel.Resources>
             <Thickness x:Key="MyThickness">10</Thickness>
             --><!--<SolidColorBrush x:Key="MyBrush" Color="red"/>--><!--
