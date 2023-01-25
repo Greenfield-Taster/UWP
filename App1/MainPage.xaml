@@ -5,9 +5,21 @@
     xmlns:local="using:App1"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:map="using:Windows.UI.Xaml.Controls.Maps" 
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <CommandBar ClosedDisplayMode="Minimal">
+    <!--browser***********************************************************************************-->
+    <Grid>
+        <!--<WebView x:Name="Browser"/>-->
+        <map:MapControl ZoomLevel="10" Heading="30" x:Name="Map">
+            <Image Source="Images//Truck.jpg" Width="80" Height="80" x:Name="TickMark"/>
+        </map:MapControl>
+    </Grid>
+    
+    
+    <!--Кнопки вперед, назад тд, как в плеере***********************************************************************************-->
+    
+    <!--<CommandBar ClosedDisplayMode="Minimal">
         <AppBarButton Icon="Shuffle" Label="Shuffle"/>
         <AppBarToggleButton Icon="RepeatAll" Label="Reapet"/>
         <AppBarSeparator/>
@@ -22,7 +34,8 @@
             <AppBarButton Icon="Like" Label="Like"/>
             <AppBarButton Icon="Dislike" Label="Dislike"/>
         </CommandBar.SecondaryCommands>
-    </CommandBar>
+    </CommandBar>-->
+    
     <!--Form animation***********************************************************************************--><!--
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

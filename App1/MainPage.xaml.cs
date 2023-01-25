@@ -1,5 +1,7 @@
 ﻿using System;
+using Windows.Devices.Geolocation;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using static System.Net.Mime.MediaTypeNames;
@@ -16,6 +18,24 @@ namespace App1
         public MainPage()
         {
             this.InitializeComponent();
+
+            /*Browser********************************************************/
+
+            //Browser.Navigate(new Uri("http://www.pearson.com"));
+            //Browser.NavigateToString("<center>My HTML</center>");
+            var Point = new Geopoint(new BasicGeoposition()
+            {
+                Latitude = 45.4215,
+                Longitude = -75.6972
+            });
+
+            Map.Center = Point;
+
+            MapControl.SetLocation(TickMark, Point);
+
+            MapControl.SetNormalizedAnchorPoint(TickMark, new Windows.Foundation.Point(0.5, 0.5));
+
+            /*********************************************************/
 
             //var BI = new BitmapImage(new Uri("ms-appx:///earth.gif"));
 
