@@ -8,13 +8,23 @@
     xmlns:map="using:Windows.UI.Xaml.Controls.Maps" 
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <!--browser***********************************************************************************-->
+    
+    <!--***********************************************************************************-->
     <Grid>
-        <!--<WebView x:Name="Browser"/>-->
+        <StackPanel>
+            <Button Content="Show help" Click="Button_Click"/>
+            <TextBlock x:Name="Result" Text="No text yet" TextWrapping="Wrap"/>
+        </StackPanel>
+    </Grid>
+    
+    
+    <!--browser***********************************************************************************-->
+    <!--<Grid>
+        --><!--<WebView x:Name="Browser"/>--><!--
         <map:MapControl ZoomLevel="10" Heading="30" x:Name="Map">
             <Image Source="Images//Truck.jpg" Width="80" Height="80" x:Name="TickMark"/>
         </map:MapControl>
-    </Grid>
+    </Grid>-->
     
     
     <!--Кнопки вперед, назад тд, как в плеере***********************************************************************************-->

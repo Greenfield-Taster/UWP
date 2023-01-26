@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
+using Windows.Storage;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Media;
@@ -23,19 +25,19 @@ namespace App1
 
             //Browser.Navigate(new Uri("http://www.pearson.com"));
             //Browser.NavigateToString("<center>My HTML</center>");
-            var Point = new Geopoint(new BasicGeoposition()
-            {
-                Latitude = 45.4215,
-                Longitude = -75.6972
-            });
+            //var Point = new Geopoint(new BasicGeoposition()
+            //{
+            //    Latitude = 45.4215,
+            //    Longitude = -75.6972
+            //});
 
-            Map.Center = Point;
+            //Map.Center = Point;
 
-            MapControl.SetLocation(TickMark, Point);
+            //MapControl.SetLocation(TickMark, Point);
 
-            MapControl.SetNormalizedAnchorPoint(TickMark, new Windows.Foundation.Point(0.5, 0.5));
+            //MapControl.SetNormalizedAnchorPoint(TickMark, new Windows.Foundation.Point(0.5, 0.5));
 
-            /*********************************************************/
+            /**Image or gif*******************************************************/
 
             //var BI = new BitmapImage(new Uri("ms-appx:///earth.gif"));
 
@@ -45,7 +47,7 @@ namespace App1
             //Image.Source = BI;
             //this.Content = Image;
 
-            /*********************************************************/
+            /****Work with textblock*****************************************************/
 
             //var G = new Grid()
             //{
@@ -64,35 +66,17 @@ namespace App1
             //G.Children.Add(TB);
             //this.Content = G;
         }
+       /*Button click********************************************************/
 
-        private void TextBlock_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+
+        private async void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-
-        }
-
-        private void Rectangle_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-        {
-
-        }
-
-        private void Rectangle_PointerPressed_1(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-        {
-
-        }
-
-        private void Rectangle_ManipulationStarted(object sender, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs e)
-        {
-
-        }
-
-        private void Grid_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
-        {
-            //MyText.SelectedText = "Hello, World!";
+            // Клик на кнопку и показывает текст с файла Help
+            var Folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+            var File = await Folder.GetFileAsync("Help.txt");
+            Task.Delay(3000).Wait(); // Задержка показывания текста 
+            var Text = await FileIO.ReadTextAsync(File);
+            Result.Text = Text;
         }
     }
 }
