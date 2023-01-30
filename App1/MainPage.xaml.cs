@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
 using Windows.Storage;
+using Windows.Storage.Pickers;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Media;
@@ -71,12 +72,18 @@ namespace App1
 
         private async void Button_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            // Клик на кнопку и показывает текст с файла Help
-            var Folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
-            var File = await Folder.GetFileAsync("Help.txt");
-            Task.Delay(3000).Wait(); // Задержка показывания текста 
-            var Text = await FileIO.ReadTextAsync(File);
-            Result.Text = Text;
+            //---------------- Клик на кнопку и показывает текст с файла Help---------------
+            //var Folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+            //var File = await Folder.GetFileAsync("Help.txt");
+            //Task.Delay(3000).Wait(); // Задержка показывания текста 
+            //var Text = await FileIO.ReadTextAsync(File);
+            //Result.Text = Text;
+
+            //-------Click to button are pick image--------
+            var picker = new FileOpenPicker();
+            picker.ViewMode = PickerViewMode.Thumbnail;
+            picker.SuggestedStartLocation = PickerLocationId.Downloads;
+            picker.FileTypeFilter.Add("jpg");
         }
     }
 }

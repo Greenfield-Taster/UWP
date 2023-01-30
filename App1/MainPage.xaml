@@ -12,8 +12,8 @@
     <!--***********************************************************************************-->
     <Grid>
         <StackPanel>
-            <Button Content="Show help" Click="Button_Click"/>
-            <TextBlock x:Name="Result" Text="No text yet" TextWrapping="Wrap"/>
+            <Button Content="Pick picture" Click="Button_Click"/>
+            <Image x:Name="Pic"/>
         </StackPanel>
     </Grid>
     
