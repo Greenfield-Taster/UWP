@@ -11,8 +11,8 @@
     
     <!--***********************************************************************************-->
     <Grid>
-        <StackPanel>
-            <Button Content="Pick picture" Click="Button_Click"/>
+        <StackPanel x:Name="ControlPanel">
+            <Button Content="Pick picture folder" Click="Button_Click"/>
             <Image x:Name="Pic"/>
         </StackPanel>
     </Grid>

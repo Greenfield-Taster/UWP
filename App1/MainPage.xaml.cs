@@ -8,6 +8,7 @@ using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using static System.Net.Mime.MediaTypeNames;
+using Image = Windows.UI.Xaml.Controls.Image;
 
 // Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x419
 
@@ -80,10 +81,47 @@ namespace App1
             //Result.Text = Text;
 
             //-------Click to button are pick image--------
-            var picker = new FileOpenPicker();
-            picker.ViewMode = PickerViewMode.Thumbnail;
+            //var picker = new FileOpenPicker();
+            //picker.ViewMode = PickerViewMode.Thumbnail;
+            //picker.SuggestedStartLocation = PickerLocationId.Downloads;
+            //picker.FileTypeFilter.Add(".jpg");
+            //picker.FileTypeFilter.Add(".jpeg");
+            //picker.FileTypeFilter.Add(".png");
+
+            //var file = await picker.PickSingleFileAsync();
+
+            //var stream = await file.OpenReadAsync();
+            //var image = new BitmapImage();
+            //image.SetSource(stream);
+            //Pic.Source = image;
+
+            //-------Click to the folder and all pictures is added to the control-----
+            var picker = new FolderPicker();
             picker.SuggestedStartLocation = PickerLocationId.Downloads;
-            picker.FileTypeFilter.Add("jpg");
+            picker.FileTypeFilter.Add("*");
+
+            var folder = await picker.PickSingleFolderAsync();
+
+            var files = await folder.GetFilesAsync();
+
+            foreach ( var file in files) 
+            {
+                await Task.Delay(2000);
+                using (var stream = await file.OpenReadAsync())
+                {
+                    var bi = new BitmapImage();
+                    bi.SetSource(stream);
+
+                    var image = new Image()
+                    {
+                        Width = 200,
+                        Height = 200,
+                    };
+                    image.Source = bi;
+
+                    ControlPanel.Children.Add(image);
+                }
+            }
         }
     }
 }
