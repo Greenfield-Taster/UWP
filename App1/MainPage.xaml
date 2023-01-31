@@ -11,10 +11,14 @@
     
     <!--***********************************************************************************-->
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <StackPanel x:Name="ControlPanel">
-            <Button Content="Pick picture folder" Click="Button_Click"/>
-            <Image x:Name="Pic"/>
+            <Button Content="Find lots of primes" Click="Button_Click"/>
         </StackPanel>
+        <TextBox Grid.Row="1" IsReadOnly="True" x:Name="Result" Text="Nothing yet" TextWrapping="Wrap"/>
     </Grid>
     
     

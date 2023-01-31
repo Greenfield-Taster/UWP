@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
 using Windows.Storage;
@@ -96,32 +97,82 @@ namespace App1
             //Pic.Source = image;
 
             //-------Click to the folder and all pictures is added to the control-----
-            var picker = new FolderPicker();
-            picker.SuggestedStartLocation = PickerLocationId.Downloads;
-            picker.FileTypeFilter.Add("*");
+            //var picker = new FolderPicker();
+            //picker.SuggestedStartLocation = PickerLocationId.Downloads;
+            //picker.FileTypeFilter.Add("*");
 
-            var folder = await picker.PickSingleFolderAsync();
+            //var folder = await picker.PickSingleFolderAsync();
 
-            var files = await folder.GetFilesAsync();
+            //var files = await folder.GetFilesAsync();
 
-            foreach ( var file in files) 
+            //foreach ( var file in files) 
+            //{
+            //    await Task.Delay(2000);
+            //    using (var stream = await file.OpenReadAsync())
+            //    {
+            //        var bi = new BitmapImage();
+            //        bi.SetSource(stream);
+
+            //        var image = new Image()
+            //        {
+            //            Width = 200,
+            //            Height = 200,
+            //        };
+            //        image.Source = bi;
+
+            //        ControlPanel.Children.Add(image);
+            //    }
+            //}
+
+            //------------------------------
+            var Primes = new List<int>();
+
+            int testvalue = 0;
+            int number = 20000;
+            int count = 0;
+
+            await Task.Run(() =>
             {
-                await Task.Delay(2000);
-                using (var stream = await file.OpenReadAsync())
+                while (count<number)
                 {
-                    var bi = new BitmapImage();
-                    bi.SetSource(stream);
-
-                    var image = new Image()
+                  bool isprime = IsPrime(testvalue);
+                    if (isprime)
                     {
-                        Width = 200,
-                        Height = 200,
-                    };
-                    image.Source = bi;
+                        Primes.Add(testvalue);
+                        count++;
+                    }
+                    testvalue++;
+                }
+            });
 
-                    ControlPanel.Children.Add(image);
+            Result.Text = "Done.";
+        }
+
+        private bool IsPrime(int n)
+        {
+            if (n <= 1)
+            {
+                return false;
+            }
+            if (n <= 3)
+            {
+                return true;
+            }
+            if (n%2 == 0 || n%3 ==0)
+            {
+                return false;
+            }
+            int i = 5;
+            while (i * i <= n)
+            {
+                if (n % i == 0 || n % (i + 2) == 0)
+                {
+                    return false;
+                    i += 6;
                 }
             }
+            return true;
         }
+
     }
 }
