@@ -1,17 +1,17 @@
 ﻿<Page
-    x:Class="App1.MainPage"
+    x:Class="App1.SecondPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:App1"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:map="using:Windows.UI.Xaml.Controls.Maps" 
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
     <Grid>
         <StackPanel>
-            <Button Content="Go to second Page" Click="Button_Click"/>
-            <HyperlinkButton Content="Go to second page 2" Click="Button_Click"/>
+            <Button x:Name="GoBackButton" Content="Go back" Click="Button_Click"/>
+            <TextBlock Text="Second Page"/>
         </StackPanel>
     </Grid>
 </Page>
